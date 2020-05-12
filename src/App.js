@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/header";
 import NavTabs from "./components/navtabs";
-import Home from "./components/pages/home";
+import Main from "./components/pages/main";
 import Lastname from "./components/pages/lastname"
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
         <Router>
           <div>
             <NavTabs />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Main} />
             <Route exact path="/lastname" component={Lastname} />
           </div>
         </Router>

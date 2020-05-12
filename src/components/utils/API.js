@@ -1,63 +1,70 @@
-import * as React from 'react';
+import axios from "axios";
+
+export default {
+  getEmployees: function() {
+    return axios
+      .get("https://alper.dev/employees")
+      .then(res => {
+        const employees = res.data;
+        return employees.map(emp => {
+          return {
+            firstName: emp.firstName,
+            lastName: emp.lastName,
+            department: emp.department
+          };
+        });
+      });
+  }
+};
 
 
-class GetEmployees extends React.Component {
-    constructor() {
-        super();
+// import * as React from 'react';
 
-        this.state = {
-            employees: []
-        };
-    }
+// class GetEmployees extends React.Component {
+//     constructor() {
+//         super();
 
-    componentDidMount() {
-        let employees = [];
-        fetch("https://alper.dev/employees")
-            .then(response => {
-                return response.json();
-            })
-            .then(json => {
-                console.log(json);
-                employees.push(json);
-                return employees
-            })
-    }
+//         this.state = {
+//             employees: []
+//         };
+//     }
 
-    render() {
-        return (
-            <div>
-                {/* {
-                    employees.map((emp => (
-                        <div key={emp.id}> {emp.firstName}</div>
-                    )))
-                } */}
-            </div>
-        );
-    }
-}
-
-// function GetEmployees() {
-//     const [employees, setEmployees] = useState();
-//     useEffect(() => {
+//     componentDidMount() {
+//         // let employees = [];
 //         fetch("https://alper.dev/employees")
-//         .then(response => {
-//             return response.json();
-//         })
+//             .then(response => {
+//                 return response.json();
+//             })
 //             .then(json => {
-//             console.log(json);
-//             setEmployees(json);
-//             });
-//     }, [employees])
-//             return (
-//                 <div>
-// 				employee list:
-// 				{
-// 					employees.map((emp => (
-// 						<div key={emp.id}> {emp.firstName}</div>
-// 					)))
-// 				}
-// 			    </div>
-//             )
+//                 console.log(json);
+//                 this.setState({employees: json})
+//             })
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <div className="container">
+//                     <table>
+//                         <thead>
+//                             <tr>
+//                                 <th>First Name</th> 
+//                                 <th>Last Name</th> 
+//                             </tr>
+//                         </thead>
+//                         <tbody>
+//                             <tr>
+//                                 <td>First Name</td> 
+//                                 <td>Last Name</td> 
+//                             </tr>
+//                         </tbody>
+                            
+//                     </table>
+//                 </div>
+//             </div>
+//         );
+//     }
 // }
 
-export default GetEmployees;
+
+// export default GetEmployees;
