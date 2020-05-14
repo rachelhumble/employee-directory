@@ -14,9 +14,9 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <Link
-          to="/lastname"
-          className={location.pathname === "/lastname" ? "nav-link active" : "nav-link"}>
-            Sort by Last Name
+          to="/department"
+          className={location.pathname === "/department" ? "nav-link active" : "nav-link"}>
+            Sort by Department
         </Link>
       </li>
     </ul>

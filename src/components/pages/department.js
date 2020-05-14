@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Table from "../table";
+import DeptTables from "../deptTables";
 
-class Main extends Component {
+class Department extends Component {
   constructor() {
   super();
 
@@ -20,14 +20,21 @@ class Main extends Component {
       .catch(err => console.log(err));
   } 
 
+  handleDeptSelect = event => {
+    const dept = event.target.value;
+    this.setState({
+      deptartment: dept
+    });
+  }
+
   render() {
     return (
       <div>
-        <h1 className="text-center">All Employees</h1>
-        <Table employees={this.state.employees} />
+        <h1 className="text-center">Employees by Department</h1>
+        <DeptTables employees={this.state.employees} handleDeptSelect={this.handleDeptSelect} />
       </div>
     )
   };
 }
 
-export default Main
+export default Department

@@ -1,0 +1,16 @@
+* {
+    font-family: 'Dosis', sans-serif !important;
+}
+
+.head {
+    font-size: 58px !important;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.body {
+    font-size: 20px;
+}
