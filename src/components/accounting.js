@@ -1,16 +1,16 @@
 import React from "react";
 import Employee from "../components/employee";
 
-const training = [];
+const accounting = [];
 
-function Training (props) {
+function Accounting (props) {
     let i;
     for(i = 0; i < props.employees.length; i++) {
-        if(props.employees[i].department === "Training") {
-            training.push(props.employees[i]);
+        if(props.employees[i].department === "Accounting") {
+            accounting.push(props.employees[i]);
         }
     }
-    console.log(training);
+    console.log(accounting);
 
     return (
       <>
@@ -27,7 +27,7 @@ function Training (props) {
               </tr>
             </thead>
             <tbody>
-                  {training.map(employee => (
+                  {accounting.map(employee => (
                     <Employee key={employee.id} employee={employee} />
                   ))}
             </tbody>
@@ -36,4 +36,4 @@ function Training (props) {
       )
 }
 
-export default Training
+export default Accounting

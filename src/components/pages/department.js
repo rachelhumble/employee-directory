@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import DeptTables from "../deptTables";
+import Buttons from "../buttons";
 
 class Department extends Component {
   constructor() {
@@ -23,15 +24,17 @@ class Department extends Component {
   handleDeptSelect = event => {
     const dept = event.target.value;
     this.setState({
-      deptartment: dept
+      department: dept
     });
+    console.log(this.state.department); 
   }
 
   render() {
     return (
       <div>
         <h1 className="text-center">Employees by Department</h1>
-        <DeptTables employees={this.state.employees} handleDeptSelect={this.handleDeptSelect} />
+        <Buttons handleDeptSelect={this.handleDeptSelect} employees={this.state.employees} department={this.state.department}/>
+        <DeptTables employees={this.state.employees} department={this.state.department} />
       </div>
     )
   };

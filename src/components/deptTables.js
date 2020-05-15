@@ -1,46 +1,149 @@
 import React from "react";
-import Employee from "../components/employee";
+import Accounting from "../components/accounting";
+import BusinessDev from "../components/businessdev";
+import Engineering from "../components/engineering";
+import HumanResources from "../components/humanresources";
+import Legal from "../components/legal";
+import Marketing from "../components/marketing";
+import ProductManagement from "../components/productmanagement";
+import ResearchAndDev from "../components/researchanddev";
+import Sales from "../components/sales";
+import Services from "../components/services";
+import Support from "../components/support";
+import Training from "../components/training";
+
 
 function DeptTables(props) {
-  console.log(props.employees);
-  return (
-    <>
-        <div class="dropdown">
-            <button onClick={props.handleDeptSelect} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Department
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="/department" value="Accounting">Accounting</a>
-                <a className="dropdown-item" href="/department" value="Business Development">Business Development</a>
-                <a className="dropdown-item" href="/department" value="Engineering">Engineering</a>
-                <a className="dropdown-item" href="/department" value="Human Resources">Human Resources</a>
-                <a className="dropdown-item" href="/department" value="Legal">Legal</a>
-                <a className="dropdown-item" href="/department" value="Marketing">Marketing</a>
-                <a className="dropdown-item" href="/department" value="Product Management">Product Management</a>
-                <a className="dropdown-item" href="/department" value="Research and Development">Research and Development</a>
-                <a className="dropdown-item" href="/department" value="Sales">Sales</a>
-                <a className="dropdown-item" href="/department" value="Services">Services</a>
-                <a className="dropdown-item" href="/department" value="Support">Support</a>
-                <a className="dropdown-item" href="/department" value="Training">Training</a>
-            </div>
-        </div>
-        <table className="table table-striped">
-        <thead>
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Department</th> 
-            </tr>
-        </thead>
-        <tbody>
-                {props.employees.map(employee => (
-                <Employee key={employee.id} employee={employee}/>
-                ))}
-        </tbody>
-        </table>
-    </>
-  )
+    if(props.department === "Accounting") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Accounting employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+          )
+    } else if(props.department === "Business Development") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <BusinessDev employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+          )
+    } else if(props.department === "Engineering") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Engineering employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Human Resources") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <HumanResources employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Legal") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Legal employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Marketing") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Marketing employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Product Management") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <ProductManagement employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Research and Development") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <ResearchAndDev employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Sales") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Sales employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Services") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Services employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Support") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Support employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else if(props.department === "Training") {
+        return (
+            <>
+                <table className="table table-striped">
+                <tbody>
+                    <Training employees={props.employees} />
+                </tbody>
+                </table>
+            </>
+            )
+    } else {
+        return (
+            <>
+                <br></br> 
+                <br></br>
+                <br></br> 
+                <div>(Select Department to Sort)</div>
+            </>
+        )
+    }
 }
 
 export default DeptTables;

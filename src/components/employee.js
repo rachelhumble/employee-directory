@@ -1,7 +1,7 @@
 import React from "react";
 
 function Employee (props) {
-  console.log(props.employee);
+  // console.log(props.employee);
     return (
           <tr>
             <th scope="row">{props.employee.id}</th>
