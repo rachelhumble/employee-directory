@@ -20,20 +20,19 @@ class Gender extends Component {
       .catch(err => console.log(err));
   } 
 
-  handleDeptSelect = event => {
-    const gender = event.target.value;
+  handleGenderSelect = event => {
+    const genderSelection = event.target.value;
     this.setState({
-      genderSelection: gender
+      gender: genderSelection
     });
-
   }
 
   render() {
     return (
       <div>
-        <h1 className="text-center">Employees by Gender</h1>
-        <Buttons handleDeptSelect={this.handleDeptSelect} employees={this.state.employees} gender={this.state.genderSelection}/>
-        <DeptTables employees={this.state.employees} gender={this.state.genderSelection} />
+        <h1 className="text-center">View Employees by Gender</h1>
+        <Buttons handleGenderSelect={this.handleGenderSelect} employees={this.state.employees} gender={this.state.gender}/>
+        <DeptTables employees={this.state.employees} gender={this.state.gender} />
       </div>
     )
   };
