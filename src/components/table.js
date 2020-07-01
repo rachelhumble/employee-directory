@@ -2,15 +2,16 @@ import React from "react";
 import Employee from "../components/employee";
 
 function Table(props) {
-  console.log(props.employees);
   return (
     <table className="table table-striped">
       <thead>
         <tr>
+          <th scope="col">Image</th>
           <th scope="col">ID</th>
+          <th scope="col">Email</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
-          <th scope="col">Department</th> 
+          <th scope="col">Gender</th> 
         </tr>
       </thead>
       <tbody>

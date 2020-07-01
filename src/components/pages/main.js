@@ -14,7 +14,6 @@ class Main extends Component {
   componentDidMount() {
     API.getEmployees()
       .then(res => {
-        console.log(res);
         this.setState({ employees: res })
       })
       .catch(err => console.log(err));

@@ -3,7 +3,7 @@ import API from "../utils/API";
 import DeptTables from "../deptTables";
 import Buttons from "../buttons";
 
-class Department extends Component {
+class Gender extends Component {
   constructor() {
   super();
 
@@ -15,29 +15,28 @@ class Department extends Component {
   componentDidMount() {
     API.getEmployees()
       .then(res => {
-        console.log(res);
         this.setState({ employees: res })
       })
       .catch(err => console.log(err));
   } 
 
   handleDeptSelect = event => {
-    const dept = event.target.value;
+    const gender = event.target.value;
     this.setState({
-      department: dept
+      genderSelection: gender
     });
-    console.log(this.state.department); 
+
   }
 
   render() {
     return (
       <div>
-        <h1 className="text-center">Employees by Department</h1>
-        <Buttons handleDeptSelect={this.handleDeptSelect} employees={this.state.employees} department={this.state.department}/>
-        <DeptTables employees={this.state.employees} department={this.state.department} />
+        <h1 className="text-center">Employees by Gender</h1>
+        <Buttons handleDeptSelect={this.handleDeptSelect} employees={this.state.employees} gender={this.state.genderSelection}/>
+        <DeptTables employees={this.state.employees} gender={this.state.genderSelection} />
       </div>
     )
   };
 }
 
-export default Department
+export default Gender
