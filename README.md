@@ -4,7 +4,7 @@
  ![Github license](https://img.shields.io/badge/License-MIT-yellow.svg)
  
 ### View deployed application [here](https://rachelhumble.github.io/employee-directory/)
-<img src=public/employee_directory.gif>
+<img src="public/employee_directory.gif">
 
 ### Description: 
 This application pulls employee data via API and demonstrates the ability to view either total employee data or view sorted. The sort function dynamically populates tables of employee data based on user-selected Gender field buttons. It utilizes CSS styling and React props drilling. 
